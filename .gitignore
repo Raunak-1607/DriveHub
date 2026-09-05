@@ -1,2 +1,4 @@
+/model/DbConnect.php
+/model/ca.pem
 /controllers/DbConnect.php
 /controllers/ca.pem
