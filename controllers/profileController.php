@@ -1,7 +1,7 @@
 <?php
 require_once "../model/employeeModel.php";
 
-// Simple mock user ID for now since session isn't fully implemented
+
 $userId = 1;
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -13,14 +13,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $email = $_POST['email'] ?? '';
             $phone = $_POST['phone'] ?? '';
             
-            // Basic validation
+            
             if(!empty($name) && !empty($email)) {
                 $result = updateProfile($userId, $name, $email, $phone);
-                // Redirect back to profile page on success
+                
                 header("Location: ../views/profile.php?msg=profile_updated");
                 exit();
             } else {
-                // Redirect back to edit page with error
+               
                 header("Location: ../views/edit_profile.php?err=empty_fields");
                 exit();
             }
@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             
             if(!empty($currentPass) && !empty($newPass) && !empty($confirmPass)) {
                 if($newPass === $confirmPass) {
-                    // Update password (in a real app, verify current password first and hash the new one)
+                  
                     $result = updatePassword($userId, $newPass);
                     header("Location: ../views/profile.php?msg=password_updated");
                     exit();
