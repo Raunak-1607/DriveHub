@@ -2,3 +2,16 @@
 /model/ca.pem
 /controllers/DbConnect.php
 /controllers/ca.pem
+
+# Editor and OS noise
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+*.swp
+# Local-only configuration
+config.local.php
+# Runtime uploads (kept out of version control on purpose)
+uploads/
+*.log
+
